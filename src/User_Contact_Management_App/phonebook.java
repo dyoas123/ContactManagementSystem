@@ -6,8 +6,7 @@
 package User_Contact_Management_App;
 
 import java.awt.Toolkit;
-import java.util.ArrayList;
-import java.util.Arrays;
+
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedList;
@@ -23,7 +22,7 @@ import javax.swing.table.DefaultTableModel;
 public class phonebook extends javax.swing.JFrame {
 
 private LinkedList<Contact> contacts;
-    Stack<Contact> stack = new Stack<>();
+Stack<Contact> stack = new Stack<>();
 
     private void setIconImage() {
        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("icon.jpg")));
@@ -59,7 +58,7 @@ private LinkedList<Contact> contacts;
      */
     public phonebook() {
         contacts = new LinkedList<>();
-        initComponents();
+        initComponents();  
         
         setIconImage();
     }
@@ -86,10 +85,12 @@ private LinkedList<Contact> contacts;
         jButton1 = new javax.swing.JButton();
         jb4 = new javax.swing.JButton();
         txtSearch = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Contact Management System");
         setBackground(new java.awt.Color(51, 153, 0));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         t1.setBackground(new java.awt.Color(153, 255, 153));
         t1.addActionListener(new java.awt.event.ActionListener() {
@@ -97,6 +98,7 @@ private LinkedList<Contact> contacts;
                 t1ActionPerformed(evt);
             }
         });
+        getContentPane().add(t1, new org.netbeans.lib.awtextra.AbsoluteConstraints(157, 20, 252, -1));
 
         t2.setBackground(new java.awt.Color(153, 255, 153));
         t2.addActionListener(new java.awt.event.ActionListener() {
@@ -104,6 +106,7 @@ private LinkedList<Contact> contacts;
                 t2ActionPerformed(evt);
             }
         });
+        getContentPane().add(t2, new org.netbeans.lib.awtextra.AbsoluteConstraints(157, 63, 252, -1));
 
         t3.setBackground(new java.awt.Color(153, 255, 153));
         t3.addActionListener(new java.awt.event.ActionListener() {
@@ -111,15 +114,22 @@ private LinkedList<Contact> contacts;
                 t3ActionPerformed(evt);
             }
         });
+        getContentPane().add(t3, new org.netbeans.lib.awtextra.AbsoluteConstraints(157, 103, 252, -1));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Name:");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Address:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(86, 67, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Phone:");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, -1, -1));
 
         SAVEbtn.setBackground(new java.awt.Color(0, 255, 255));
         SAVEbtn.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
@@ -130,6 +140,7 @@ private LinkedList<Contact> contacts;
                 SAVEbtnActionPerformed(evt);
             }
         });
+        getContentPane().add(SAVEbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 137, -1, -1));
 
         jTable1.setBackground(new java.awt.Color(0, 255, 255));
         jTable1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -144,6 +155,8 @@ private LinkedList<Contact> contacts;
         ));
         jScrollPane1.setViewportView(jTable1);
 
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 178, 471, 214));
+
         jButton2.setBackground(new java.awt.Color(51, 255, 255));
         jButton2.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jButton2.setForeground(new java.awt.Color(0, 0, 0));
@@ -153,6 +166,7 @@ private LinkedList<Contact> contacts;
                 jButton2ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(107, 137, -1, -1));
 
         jButton1.setBackground(new java.awt.Color(51, 255, 255));
         jButton1.setFont(new java.awt.Font("Sitka Subheading", 1, 12)); // NOI18N
@@ -163,6 +177,7 @@ private LinkedList<Contact> contacts;
                 jButton1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(188, 137, 100, -1));
 
         jb4.setBackground(new java.awt.Color(0, 255, 255));
         jb4.setFont(new java.awt.Font("Sitka Text", 1, 12)); // NOI18N
@@ -173,76 +188,18 @@ private LinkedList<Contact> contacts;
                 jb4ActionPerformed(evt);
             }
         });
+        getContentPane().add(jb4, new org.netbeans.lib.awtextra.AbsoluteConstraints(393, 137, 87, -1));
 
         txtSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtSearchActionPerformed(evt);
             }
         });
+        getContentPane().add(txtSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 138, 81, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(SAVEbtn)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtSearch, javax.swing.GroupLayout.DEFAULT_SIZE, 79, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel1)
-                                    .addComponent(jLabel2))
-                                .addGap(30, 30, 30)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(t1, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(t2, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(t3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jb4, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 471, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(17, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(t1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addGap(21, 21, 21)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(t2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(t3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(SAVEbtn))
-                    .addComponent(txtSearch, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jb4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(66, 66, 66)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(25, Short.MAX_VALUE))
-        );
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/User_Contact_Management_App/ara.jpg"))); // NOI18N
+        jLabel4.setText("jLabel4");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 510, 410));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -255,23 +212,23 @@ private LinkedList<Contact> contacts;
 
     public void add() {
         String name = t1.getText().trim();
-        String phoneNumber = t2.getText().trim();
-        String address = t3.getText().trim();
+        String address = t2.getText().trim();
+        String phoneNumber = t3.getText().trim();
 
         if (!name.isEmpty() && !phoneNumber.isEmpty()) {
-            Contact contact = new Contact(name, phoneNumber, address);
+            Contact contact = new Contact(name,  phoneNumber,address);
             contacts.add(contact);
-            updateTable(); // Uncomment this line
+            updateTable(); 
             clearFields();
         } else {
-            JOptionPane.showMessageDialog(this, "Please enter both name and phone number", "Input Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Please enter address name and phone number", "Input Error", JOptionPane.ERROR_MESSAGE);
         }
     }
 
     private void updateTable() {
         Collections.sort(contacts, Comparator.comparing(Contact::getName));
         DefaultTableModel tblModel = (DefaultTableModel) jTable1.getModel();
-        tblModel.setRowCount(0);
+        tblModel.setRowCount(-0);
 
         for (Contact contact : contacts) {
             tblModel.addRow(new Object[]{contact.getName(), contact.getAdress(), contact.getPhoneNumber()});
@@ -320,8 +277,8 @@ private LinkedList<Contact> contacts;
     
        private void showContact(Contact contact) {
         t1.setText(contact.getName());
-        t2.setText(contact.getPhoneNumber());
-            t3.setText(contact.getAdress());
+        t2.setText(contact.getAdress());
+        t3.setText(contact.getPhoneNumber());
     }
     
     
@@ -412,6 +369,7 @@ private LinkedList<Contact> contacts;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JButton jb4;
